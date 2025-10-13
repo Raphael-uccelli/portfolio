@@ -6,6 +6,8 @@
     <title>Portfolio Développeur - Uccelli Raphaël</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -59,8 +61,8 @@
                 <ul>
                     <li>Manque de confiance</li>
                     <li>Réservé</li>
-                    <li>anxieux</li>
-                    <li>émotif</li>
+                    <li>Anxieux</li>
+                    <li>Émotif</li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -130,6 +132,11 @@
                 <p>Application web de gestion d'agenda et de rappels programmés.</p>
                 <img src="agenda.png" alt="Projet Agenda" class="img-fluid rounded shadow">
             </div>
+            <div class="col-md-6 mt-4">
+                <h3>Formulaire de voiture</h3>
+                <p>Formulaire de voiture modifiable puis sauvegardable et exportage en programmation orienté objet C++.</p>
+                <img src="agenda.png" alt="Projet Agenda" class="img-fluid rounded shadow">
+            </div>
         </div>
     </section>
 
@@ -141,6 +148,98 @@
     <footer class="text-center py-4 bg-dark text-white">
         <p>&copy; 2024 Uccelli Raphaël</p>
     </footer>
+
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-lg-custom">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Titre du projet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="Mordekaiser.jpg" alt="" class="modal-img mb-3">
+                    <p id="modalDescription">Description longue ici...</p>
+                    <div id="modalExtraImages" class="d-flex flex-wrap justify-content-center gap-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script>
+        const projects = [
+            {
+                title: "Site web",
+                image: "site.png",
+                description: "Description longue du projet de site web réalisé en Terminale avec HTML, CSS, JS. Collaboration en équipe, responsive design, etc.",
+                extraImages: []
+            },
+            {
+                title: "Dual-Boot",
+                image: "dualboot.png",
+                description: "Installation et configuration d’un dual-boot sur une machine virtuelle. Objectif : comprendre les partitions, le bootloader, etc.",
+                extraImages: []
+            },
+            {
+                title: "Dev'Art",
+                image: "devart.png",
+                description: "Projet artistique et numérique autour de la résilience, présenté à Dev'Art 2025. Utilisation de traitements d'image, symbolique artistique...",
+                extraImages: ["devart2.png", "devart3.png"]
+            },
+            {
+                title: "Agenda",
+                image: "agenda.png",
+                description: "Application web permettant de gérer son agenda, programmer des rappels, notifications automatiques, etc.",
+                extraImages: []
+            },
+            {
+                title: "Formulaire de voiture",
+                image: "agenda.png",
+                description: "Développement d’un formulaire dynamique en C++ orienté objet, avec possibilité de sauvegarde/exportation.",
+                extraImages: []
+            }
+        ];
+
+        const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalExtraImages = document.getElementById('modalExtraImages');
+
+        document.querySelectorAll('#projects img').forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                const project = projects[index];
+                modalTitle.textContent = project.title;
+                modalImage.src = project.image;
+                modalImage.alt = project.title;
+                modalDescription.textContent = project.description;
+
+                modalExtraImages.innerHTML = "";
+                if (project.extraImages.length > 0) {
+                    project.extraImages.forEach(src => {
+                        const extraImg = document.createElement('img');
+                        extraImg.src = src;
+                        extraImg.alt = project.title + " extra";
+                        extraImg.className = "img-thumbnail";
+                        extraImg.style.maxWidth = "150px";
+                        modalExtraImages.appendChild(extraImg);
+                    });
+                }
+
+                modal.show();
+            });
+        });
+
+        // Flou personnalisé pour le backdrop
+        const observer = new MutationObserver(() => {
+            document.querySelectorAll('.modal-backdrop').forEach(el => {
+                el.classList.add('blur-backdrop');
+            });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+    </script>
+
+
 </body>
 
 </html>
