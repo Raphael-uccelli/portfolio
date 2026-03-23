@@ -47,7 +47,7 @@
     
     <section id="qualities" class="container my-5">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <h3>Qualités</h3>
                 <ul>
                     <li>Passionné</li>
@@ -56,16 +56,7 @@
                     <li>Prévenant</li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h3>Défauts</h3>
-                <ul>
-                    <li>Manque de confiance</li>
-                    <li>Réservé</li>
-                    <li>Anxieux</li>
-                    <li>Émotif</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <h3>Passions</h3>
                 <ul>
                     <li>Jeux vidéo</li>
@@ -76,6 +67,7 @@
             </div>
         </div>
     </section>
+
     
 
     <section id="skills" class="container my-5">
@@ -105,6 +97,10 @@
                 <img src="java.png" alt="Java" class="skill-logo">
                 <p>Java</p>
             </div>
+            <div class="col-md-2 col-6">
+                <img src="php.png" alt="PHP" class="skill-logo">
+                <p>PHP</p>
+            </div>
         </div>
     </section>
     
@@ -128,14 +124,19 @@
                 <img src="devart.png" alt="Projet Dev'Art" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6 mt-4">
-                <h3>Agenda</h3>
-                <p>Application web de gestion d'agenda et de rappels programmés.</p>
-                <img src="agenda.png" alt="Projet Agenda" class="img-fluid rounded shadow">
+                <h3>site en JavaScript</h3>
+                <p>Application web sous forme de quiz StarWars avec une api.</p>
+                <img src="starwars.png" alt="Projet starwars" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6 mt-4">
                 <h3>Formulaire de voiture</h3>
                 <p>Formulaire de voiture modifiable puis sauvegardable et exportage en programmation orienté objet C++.</p>
-                <img src="agenda.png" alt="Projet Agenda" class="img-fluid rounded shadow">
+                <img src="carForm.png" alt="Projet formulaire voiture" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6 mt-4">
+                <h3>Gestionnaire de Workflow</h3>
+                <p>Application web réalisé en java-Script, utilisation de webpack, handlebars et travail collaboratif avec git en méthode SCRUM.</p>
+                <img src="flowMotion2.png" alt="FlowMotion" class="img-fluid rounded shadow">
             </div>
         </div>
     </section>
@@ -157,85 +158,135 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img id="modalImage" src="Mordekaiser.jpg" alt="" class="modal-img mb-3">
+                    <!-- Carrousel -->
+                    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Image principale -->
+                            <div class="carousel-item active">
+                                <img id="modalImage" src="Mordekaiser.jpg" alt="Image principale" class="modal-img mb-3">
+                            </div>
+                            <!-- Images supplémentaires -->
+                            <div class="carousel-item">
+                                <img src="devart2.png" alt="Image supplémentaire 1" class="modal-img mb-3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="devart3.png" alt="Image supplémentaire 2" class="modal-img mb-3">
+                            </div>
+                        </div>
+                        <!-- Contrôles du carrousel -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Précédent</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Suivant</span>
+                        </button>
+                    </div>
+
+                    <!-- Description du projet -->
                     <p id="modalDescription">Description longue ici...</p>
-                    <div id="modalExtraImages" class="d-flex flex-wrap justify-content-center gap-2"></div>
                 </div>
             </div>
         </div>
     </div>
 
+
         <script>
         const projects = [
-            {
-                title: "Site web",
-                image: "site.png",
-                description: "Description longue du projet de site web réalisé en Terminale avec HTML, CSS, JS. Collaboration en équipe, responsive design, etc.",
-                extraImages: []
-            },
-            {
-                title: "Dual-Boot",
-                image: "dualboot.png",
-                description: "Installation et configuration d’un dual-boot sur une machine virtuelle. Objectif : comprendre les partitions, le bootloader, etc.",
-                extraImages: []
-            },
-            {
-                title: "Dev'Art",
-                image: "devart.png",
-                description: "Projet artistique et numérique autour de la résilience, présenté à Dev'Art 2025. Utilisation de traitements d'image, symbolique artistique...",
-                extraImages: ["devart2.png", "devart3.png"]
-            },
-            {
-                title: "Agenda",
-                image: "agenda.png",
-                description: "Application web permettant de gérer son agenda, programmer des rappels, notifications automatiques, etc.",
-                extraImages: []
-            },
-            {
-                title: "Formulaire de voiture",
-                image: "agenda.png",
-                description: "Développement d’un formulaire dynamique en C++ orienté objet, avec possibilité de sauvegarde/exportation.",
-                extraImages: []
+        {
+            title: "Site web",
+            image: "site.png",
+            description: "Projet de site web réalisé en équipe en Terminale avec HTML, CSS, JS et du Responsive design. Ce projet est le premier m'ayant introduit aux défis de créations d'un site web et c'est grâce à ce projet que je me suis orienté dans le domaine de l'informatique, codé efficacement, en groupe, avec du code clair et maintenable pour un rendu graphique intuitif et compréhensible pour les utilisateurs. Donc bien que premier vrai projet il m'a introduit aux futurs défis qu'un développeur peut rencontrer tout en m'apprenant les bases de la programmation web, du travail coopératif et du code collaboratif mais aussi à réfléchir à l'expérience utilisateurs.",
+            extraImages: [],
+            hasCarousel: false
+        },
+        {
+            title: "Dual-Boot",
+            image: "dualboot.png",
+            description: "Installation et configuration d'un dual-boot sur une machine virtuelle. Objectif : comprendre les partitions, le bootloader, etc. Ce projet m'a introduit à Linux mais aussi plus généralement à la gestion des OS. Étant le premier projet réalisé dans mes études supérieures, il montre que puisque j'ai par la suite reproduit le dual boot pour mes ordinateurs personnels, je sais m'adapter au contexte et environnement de travail, que je sais aller plus loin et prouve mon envie d'apprendre dans ce domaine.",
+            extraImages: [],
+            hasCarousel: false
+        },
+        {
+            title: "Dev'Art",
+            image: "devart.png",
+            description: "Projet artistique et numérique autour de la résilience, présenté à Dev'Art 2025. Utilisation de traitements d'image, symbolique artistique et de Unity pour le développement. Ce projet qui n'était pas un projet scolaire m'a permis de prendre du recul sur ce que j'apprennais et l'utilité des connaissances acquises dans ma formation. J'ai pris conscience de l'importance d'avoir appris à coder de manière compréhensible pour moi qui reviens après une pause et qui ne me retrouve plus dans mon propre code, donc encore pire pour mes camarades. Ce projet m'a aussi permis de prendre goût à Unity et je suis donc devenu vraiment curieux de à quel point ce genre de logiciel et ses concurrents peuvent aller. J'ai donc appris que lorsque je joue à mes propres jeux, je regarde quels moteur graphique ils utilisent, et me renseigne sur la spécificité de chacun. Enfin ce premier jeu a été une porte d'entrée et le début de plusieurs petites créations que je commence ou envisage, alors que avant je n'imaginais ce monde aussi accessible.",
+            extraImages: ["devart2.png", "devart3.png"],
+            hasCarousel: true
+        },
+        {
+            title: "Projet d'application web sous forme de quiz starwars",
+            image: "starwars.png",
+            description: "Projet universitaire sous forme d'application web n'utilisant que du JavaScript et Webpack pour gérer les dépendances. Une API sur StarWars a été utilisée pour ce qui est des données avec des requêtes HTTP. Ce projet prouve ma créativité car la consigne était seulement une application web JavaScript utilisant une API web. J'ai donc réalisé ce quiz Star Wars, œuvre passionnante. Ce genre de projet peut également montrer que même avec peu de consignes je sais faire des choix réfléchis avant d'agir mais tout en prenant mes responsabilités et en donnant le maximum dans des domaines que j'apprécie.",
+            extraImages: [],
+            hasCarousel: false
+        },
+        {
+            title: "Formulaire de voiture",
+            image: "carForm.png",
+            description: "Projet universitaire nécessitant une réflexion de conception, puis développement d'un formulaire dynamique en C++ orienté objet avec Qt Creator. Possibilité de sauvegarde/exportation en XML et JSON. Ce projet m'a dans un premier temps permis de faire face pour la première fois à un défi de réaliser l'application et sa logique de zéro. C'est-à-dire que le sujet contenait toutes les données sur le véhicule qu'il fallait afficher, puis nous devions en binôme créer le diagramme de classes. Donc réfléchir à chaque lien et à la création de chaque classe avec la répartition des données dans celle-ci. J'ai beaucoup apprécié cet aspect de réflexion sur la création de l'architecture de notre application et c'est pour moi un domaine qui m'intéresse beaucoup parmi tous ceux de l'informatique en général.",
+            extraImages: [],
+            hasCarousel: false
+        },
+        {
+            title: "Application web de gestion de Workflows",
+            image: "flowMotion1.png",
+            description: "Projet universitaire nécessitant une réflexion de conception, puis développement d'une application web en JavaScript. Utilisation de Webpack, Handlebars et travail collaboratif avec Git en méthode SCRUM. Ce projet nous a permis d'apprendre à travailler en équipe avec une méthodologie SCRUM, de gérer les sprints et de collaborer efficacement grâce à Git. L'utilisation de Webpack et Handlebars m'a montré l'importance des outils de build et des moteurs de templating pour structurer une application web. Un excellent projet d'apprentissage du travail en équipe et des méthodes agiles.",
+            extraImages: [ "flowMotion3.png", "flowMotion2.png"],
+            hasCarousel: true
+        }
+    ];
+
+    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const carouselInner = document.querySelector('.carousel-inner');
+
+    document.querySelectorAll('#projects img').forEach((img, index) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            const project = projects[index];
+            modalTitle.textContent = project.title;
+            modalDescription.textContent = project.description;
+
+            // Remplir le carrousel avec l'image principale et les images supplémentaires
+            carouselInner.innerHTML = ""; // Réinitialise le carrousel à chaque fois
+
+            // Image principale
+            const mainImageItem = document.createElement('div');
+            mainImageItem.classList.add('carousel-item', 'active');
+            const mainImage = document.createElement('img');
+            mainImage.src = project.image;
+            mainImage.alt = project.title + " principale";
+            mainImage.className = "modal-img mb-3";
+            mainImageItem.appendChild(mainImage);
+            carouselInner.appendChild(mainImageItem);
+
+            // Images supplémentaires - uniquement si projet a carousel
+            if (project.hasCarousel) {
+                project.extraImages.forEach(extraSrc => {
+                    const extraImageItem = document.createElement('div');
+                    extraImageItem.classList.add('carousel-item');
+                    const extraImage = document.createElement('img');
+                    extraImage.src = extraSrc;
+                    extraImage.alt = project.title + " extra";
+                    extraImage.className = "modal-img mb-3";
+                    extraImageItem.appendChild(extraImage);
+                    carouselInner.appendChild(extraImageItem);
+                });
             }
-        ];
 
-        const modal = new bootstrap.Modal(document.getElementById('projectModal'));
-        const modalTitle = document.getElementById('modalTitle');
-        const modalImage = document.getElementById('modalImage');
-        const modalDescription = document.getElementById('modalDescription');
-        const modalExtraImages = document.getElementById('modalExtraImages');
-
-        document.querySelectorAll('#projects img').forEach((img, index) => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-                const project = projects[index];
-                modalTitle.textContent = project.title;
-                modalImage.src = project.image;
-                modalImage.alt = project.title;
-                modalDescription.textContent = project.description;
-
-                modalExtraImages.innerHTML = "";
-                if (project.extraImages.length > 0) {
-                    project.extraImages.forEach(src => {
-                        const extraImg = document.createElement('img');
-                        extraImg.src = src;
-                        extraImg.alt = project.title + " extra";
-                        extraImg.className = "img-thumbnail";
-                        extraImg.style.maxWidth = "150px";
-                        modalExtraImages.appendChild(extraImg);
-                    });
-                }
-
-                modal.show();
+            // Masquer/Afficher les contrôles du carrousel
+            const carouselControls = document.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+            carouselControls.forEach(control => {
+                control.style.display = project.hasCarousel ? 'block' : 'none';
             });
-        });
 
-        // Flou personnalisé pour le backdrop
-        const observer = new MutationObserver(() => {
-            document.querySelectorAll('.modal-backdrop').forEach(el => {
-                el.classList.add('blur-backdrop');
-            });
+            modal.show();
         });
+    });
+
         observer.observe(document.body, { childList: true, subtree: true });
     </script>
 

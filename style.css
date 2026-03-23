@@ -101,4 +101,22 @@ footer p {
         margin: 0 auto;
 }
 
+/* Carrousel dans la modal */
+#projectCarousel .carousel-inner {
+    max-width: 100%;
+}
+
+.modal-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #007bff; /* Change la couleur des contrôles */
+}
+
+
 
