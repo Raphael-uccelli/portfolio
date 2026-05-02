@@ -7,74 +7,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Portfolio Développeur</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<body class="portfolio-page">
+    <nav class="navbar navbar-expand-lg custom-nav fixed-top">
+        <div class="container nav-shell">
+            <div class="nav-top-row w-100">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse nav-menu-stack" id="navbarNav">
+                <ul class="navbar-nav nav-links-group nav-pages ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-pill" href="index.html">Accueil</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-pill active dropdown-toggle" href="portfolio.html">Compétences & Projets</a>
+                        <ul class="dropdown-menu nav-dropdown-menu">
+                            <li><a class="dropdown-item" href="#skills">Compétences</a></li>
+                            <li><a class="dropdown-item" href="#projects">Projets</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-pill" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="text-center py-5 bg-primary text-white">
-        <h1>Uccelli Raphaël</h1>
-        <p>Développeur Informatique</p>
-    </header>
-
-    <section id="about" class="container my-5">
-        <h2>À propos de moi</h2>
-        <p>J’ai découvert ma passion pour l’informatique assez tôt, 
-            puis c'est au lycée avec
-            la spécialité NSI que j'ai compris que j'en ferai mon métier.
-            Grâce à cela, j’ai appris les 
-            bases de la programmation avec Python et découvert la logique
-             algorithmique. Actuellement en BUT Informatique à Arles, je 
-             souhaite poursuivre mes études jusqu'au Bac+5 et me 
-             spécialiser en ingénierie ou en développement web.</p>
-    </section>
-
-    
-    <section id="qualities" class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Qualités</h3>
-                <ul>
-                    <li>Passionné</li>
-                    <li>A l’écoute</li>
-                    <li>Sérieux</li>
-                    <li>Prévenant</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h3>Défauts</h3>
-                <ul>
-                    <li>Manque de confiance</li>
-                    <li>Réservé</li>
-                    <li>anxieux</li>
-                    <li>émotif</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h3>Passions</h3>
-                <ul>
-                    <li>Jeux vidéo</li>
-                    <li>Sports (hand-ball / volley-ball)</li>
-                    <li>Développement web</li>
-                    <li>Création artistique numérique</li>
-                </ul>
-            </div>
+    <header class="portfolio-header text-center">
+        <div class="container">
+            <p class="hero-kicker">Page dédiée</p>
+            <h1>Compétences & Projets</h1>
+            <p class="hero-subtitle">Tout mon univers technique en un seul endroit</p>
         </div>
-    </section>
-    
+    </header>
 
     <section id="skills" class="container my-5">
         <h2>Compétences</h2>
@@ -103,6 +66,22 @@
                 <img src="java.png" alt="Java" class="skill-logo">
                 <p>Java</p>
             </div>
+            <div class="col-md-2 col-6">
+                <img src="php.png" alt="PHP" class="skill-logo">
+                <p>PHP</p>
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="docker.png" alt="Docker" class="skill-logo">
+                <p>Docker</p>
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="ros2.png" alt="ROS2" class="skill-logo">
+                <p>ROS2</p>
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="isaacsim.png" alt="NVIDIA Isaac Sim" class="skill-logo">
+                <p>NVIDIA Isaac Sim</p>
+            </div>
         </div>
     </section>
     
@@ -126,21 +105,190 @@
                 <img src="devart.png" alt="Projet Dev'Art" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6 mt-4">
-                <h3>Agenda</h3>
-                <p>Application web de gestion d'agenda et de rappels programmés.</p>
-                <img src="agenda.png" alt="Projet Agenda" class="img-fluid rounded shadow">
+                <h3>Site en JavaScript</h3>
+                <p>Application web sous forme de quiz StarWars avec une API.</p>
+                <img src="starwars.png" alt="Projet StarWars" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6 mt-4">
+                <h3>Formulaire de voiture</h3>
+                <p>Formulaire modifiable puis sauvegardable et exportable en programmation orientée objet C++.</p>
+                <img src="carForm.png" alt="Projet formulaire voiture" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6 mt-4">
+                <h3>Gestionnaire de Workflow</h3>
+                <p>Application web en JavaScript avec Webpack, Handlebars et collaboration Git en méthode SCRUM.</p>
+                <img src="flowMotion2.png" alt="FlowMotion" class="img-fluid rounded shadow">
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container my-5 text-center">
-        <h2>Contact</h2>
-        <p>Pour toute demande, vous pouvez me contacter via mon email : <strong>uccelliraphael@gmail.com</strong></p>
+    <section class="container my-5 text-center reveal-on-scroll">
+        <h2>Besoin d'échanger sur un projet ?</h2>
+        <a href="contact.html" class="btn btn-primary btn-lg custom-cta">Aller vers la page contact</a>
     </section>
 
     <footer class="text-center py-4 bg-dark text-white">
-        <p>&copy; 2024 Uccelli Raphaël</p>
+        <p>&copy; 2026 Uccelli Raphaël</p>
     </footer>
+
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-lg-custom">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Titre du projet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Précédent</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Suivant</span>
+                        </button>
+                    </div>
+                    <p id="modalDescription" class="modal-description mt-3"></p>
+                    <div id="modalTechnologies" class="tech-capsules" aria-label="Technologies utilisées"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const projects = [
+            {
+                title: "Site web",
+                image: "site.png",
+                description: "Premier site réalisé en équipe en Terminale pour découvrir les bases du web. Ce projet m’a appris le responsive design, l’organisation en groupe et la logique de construction d’une page claire pour l’utilisateur.",
+                technologies: [
+                    { label: "HTML", variant: "html" },
+                    { label: "CSS", variant: "css" },
+                    { label: "JavaScript", variant: "js" }
+                ],
+                extraImages: [],
+                hasCarousel: false
+            },
+            {
+                title: "Dual-Boot",
+                image: "dualboot.png",
+                description: "Mise en place d’un dual-boot sur machine virtuelle pour comprendre les partitions, le bootloader et la gestion des systèmes. Ce projet m’a permis de mieux appréhender Linux et le fonctionnement général d’un ordinateur au démarrage.",
+                technologies: [
+                    { label: "Linux", variant: "linux" },
+                    { label: "Virtualisation", variant: "virtual" }
+                ],
+                extraImages: [],
+                hasCarousel: false
+            },
+            {
+                title: "Dev'Art",
+                image: "devart.png",
+                description: "Projet artistique et numérique présenté à Dev’Art 2025 autour de la résilience. J’y ai utilisé Unity et un travail sur l’image pour donner une forme plus concrète à une idée créative.",
+                technologies: [
+                    { label: "Unity", variant: "unity" },
+                    { label: "C#", variant: "csharp" },
+                ],
+                extraImages: ["devart2.png", "devart3.png"],
+                hasCarousel: true
+            },
+            {
+                title: "Projet d'application web sous forme de quiz starwars",
+                image: "starwars.png",
+                description: "Quiz web Star Wars développé en JavaScript avec Webpack. L’API alimente les questions et les données, ce qui rend le projet à la fois dynamique et plus proche d’une vraie application web.",
+                technologies: [
+                    { label: "JavaScript", variant: "js" },
+                    { label: "Webpack", variant: "webpack" },
+                    { label: "API REST", variant: "api" }
+                ],
+                extraImages: [],
+                hasCarousel: false
+            },
+            {
+                title: "Formulaire de voiture",
+                image: "carForm.png",
+                description: "Formulaire dynamique en C++ avec Qt, capable d’enregistrer et d’exporter les données en XML et JSON. Le projet m’a surtout appris à structurer une application orientée objet proprement.",
+                technologies: [
+                    { label: "C++", variant: "cpp" },
+                    { label: "Qt", variant: "qt" },
+                    { label: "XML", variant: "xml" },
+                    { label: "JSON", variant: "json" }
+                ],
+                extraImages: [],
+                hasCarousel: false
+            },
+            {
+                title: "Application web de gestion de Workflows",
+                image: "flowMotion2.png",
+                description: "Application web collaborative en JavaScript pensée avec Webpack, Handlebars, Git et une méthode SCRUM. Ce projet m’a permis de travailler en équipe tout en gardant un code organisé et simple à faire évoluer.",
+                technologies: [
+                    { label: "JavaScript", variant: "js" },
+                    { label: "HTML", variant: "html" },
+                    { label: "CSS", variant: "css" },
+                    { label: "Webpack", variant: "webpack" },
+                    { label: "Handlebars", variant: "handlebars" }
+                ],
+                extraImages: ["flowMotion3.png", "flowMotion1.png"],
+                hasCarousel: true
+            }
+        ];
+
+        const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalTechnologies = document.getElementById('modalTechnologies');
+        const carouselInner = document.querySelector('#projectCarousel .carousel-inner');
+        const carouselControls = document.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+
+        document.querySelectorAll('#projects img').forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                const project = projects[index];
+                modalTitle.textContent = project.title;
+                modalDescription.textContent = project.description;
+                modalTechnologies.innerHTML = '';
+
+                project.technologies.forEach((technology) => {
+                    const capsule = document.createElement('span');
+                    capsule.className = `tech-capsule tech-${technology.variant}`;
+                    capsule.textContent = technology.label;
+                    modalTechnologies.appendChild(capsule);
+                });
+
+                carouselInner.innerHTML = '';
+
+                const mainImageItem = document.createElement('div');
+                mainImageItem.classList.add('carousel-item', 'active');
+                const mainImage = document.createElement('img');
+                mainImage.src = project.image;
+                mainImage.alt = project.title + ' principale';
+                mainImage.className = 'modal-img mb-3';
+                mainImageItem.appendChild(mainImage);
+                carouselInner.appendChild(mainImageItem);
+
+                if (project.hasCarousel) {
+                    project.extraImages.forEach((extraSrc) => {
+                        const extraImageItem = document.createElement('div');
+                        extraImageItem.classList.add('carousel-item');
+                        const extraImage = document.createElement('img');
+                        extraImage.src = extraSrc;
+                        extraImage.alt = project.title + ' extra';
+                        extraImage.className = 'modal-img mb-3';
+                        extraImageItem.appendChild(extraImage);
+                        carouselInner.appendChild(extraImageItem);
+                    });
+                }
+
+                carouselControls.forEach((control) => {
+                    control.style.display = project.hasCarousel ? 'block' : 'none';
+                });
+
+                modal.show();
+            });
+        });
+    </script>
 </body>
 
 </html>
